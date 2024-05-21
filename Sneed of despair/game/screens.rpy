@@ -31,6 +31,7 @@ style button:
 style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
+    size 40
 
 
 style label_text is gui_text:
@@ -287,11 +288,12 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.5
+        yalign 0.75
+        
 
         spacing gui.navigation_spacing
 
@@ -299,9 +301,11 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
+
         else:
 
             textbutton _("History") action ShowMenu("history")
+            
 
             textbutton _("Save") action ShowMenu("save")
 
@@ -340,6 +344,9 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    xalign 0.5
+
+    
 
 
 ## Main Menu screen ############################################################
@@ -385,13 +392,13 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
+    xalign 0.5
     xoffset -30
     xmaximum 1200
-    yalign 1.0
+    yalign 0.25
     yoffset -30
 
 style main_menu_text:
@@ -399,6 +406,7 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
+    xalign 0.5
 
 style main_menu_version:
     properties gui.text_properties("version")
